@@ -12,7 +12,7 @@ class User(AbstractUser):
 
 class Book(models.Model):
     title = models.CharField(max_length=250)
-    author = models.CharField(max_length=255)
+    author = models.ManyToManyField('Author', related_name='authors')
     description = models.TextField(max_length=2000)
     url = models.URLField(max_length=250)
     created_at = DateTimeField(auto_now_add = True)
@@ -20,3 +20,14 @@ class Book(models.Model):
     
     def __str__(self):
         return f"{self.title}, {self.author}, {self.description}"
+
+class Author(models.Model):
+    name = models.CharField(max_length=225)
+    books = models.ManyToManyField(Book, related_name='book', blank=True)
+
+    class Meta:
+        ordering = ['name']
+        
+    
+    def __str__(self):
+        return self.name
