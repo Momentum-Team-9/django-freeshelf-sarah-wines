@@ -7,8 +7,11 @@
     <div class="book-title">
       <a href="{% url 'show_book' pk=book.pk%}"> <h2>{{book.title}}</h2> </a>
     </div>
-    <p>Author: {{book.author}}</p>
-
+    {% for author in book.authors.all %}
+    <p>Author: {{author.name}}</p>
+    {% endfor %} {% for category in book.categories.all %}
+    <p>Category: {{ category.name }}</p>
+    {% endfor %}
     <p>{{book.description}}</p>
     <a href="{{book.url}}">{{book.url}}</a>
     <p>Added: {{book.created_at}}</p>
