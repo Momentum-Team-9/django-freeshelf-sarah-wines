@@ -15,13 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from books import views as book_views
+from books import views 
 from django.conf import settings
 
 
 
 urlpatterns = [
+    path('', views.index, name='index'),
     path("admin/", admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
-    path('', book_views.list_books, name='list_books'),
+    path('books/', views.list_books, name='list_books'),
+    path('books/<int:pk>', views.show_book, name="show_book"),
 ]

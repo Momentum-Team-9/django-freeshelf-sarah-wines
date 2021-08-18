@@ -1,17 +1,16 @@
 {% extends "base.html" %} {% block content %}
 
-<h1>Books</h1>
-<div class="book-field">
-  {% for book in books %}
+
   <div class="book-card">
     <div class="book-title">
-      <a href="{% url 'show_book' pk=book.pk%}"> <h2>{{book.title}}</h2> </a>
+       <h2>{{book.title}}</h2> </a>
     </div>
     <p>Author: {{book.author}}</p>
 
     <p>{{book.description}}</p>
     <a href="{{book.url}}">{{book.url}}</a>
     <p>Added: {{book.created_at}}</p>
-    {% endfor %} {% endblock %}
+    
   </div>
+  {% endblock %}
 </div>
