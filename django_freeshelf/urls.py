@@ -26,5 +26,5 @@ urlpatterns = [
     path('accounts/', include('registration.backends.simple.urls')),
     path('books/', views.list_books, name='list_books'),
     path('books/<int:pk>', views.show_book, name="show_book"),
-    path("categories/<slug:slug>", views.show_category, name="show_category"),
+    path('books/<slug:slug>', views.show_category, name="show_category"),
 ]

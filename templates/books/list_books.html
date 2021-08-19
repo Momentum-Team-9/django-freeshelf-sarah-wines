@@ -10,7 +10,12 @@
     {% for author in book.authors.all %}
     <p>Author: {{author.name}}</p>
     {% endfor %} {% for category in book.categories.all %}
-    <p>Category: {{ category.name }}</p>
+    <p>
+      Category:
+      <a href="{% url 'show_category' slug=category.slug%}">
+        {{ category.name }}</a
+      >
+    </p>
     {% endfor %}
     <p>{{book.description}}</p>
     <a href="{{book.url}}">{{book.url}}</a>

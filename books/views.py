@@ -3,7 +3,8 @@ from .models import Book, Author, User, Category
 
 # Create your views here.
 def list_books(request):
-    books = Book.objects.all()
+    # books = Book.objects.all()
+    books = Book.objects.all().order_by('-created_at')
     return render(request, "books/list_books.html",
                   {"books": books})
 
