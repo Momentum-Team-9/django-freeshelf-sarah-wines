@@ -10,7 +10,6 @@
   margin: 10px 5% 10px 5%;
   text-align: center;
   padding: 10px;
-  display: flex;
   flex-wrap: wrap;
 
   width: 90%;
@@ -31,7 +30,10 @@
   align-items: center;
   margin: 20px;
 }
-
+.title-author {
+  display: inline-block;
+  direction: ltr;
+}
 p {
   width: 80%;
 }
@@ -45,24 +47,27 @@ h1 {
 }
 .author {
   display: flex;
-  float: left;
-
+  justify-content: center;
+  align-items: center;
   margin: 20px;
 }
 .category {
-  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .description {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
 }
 .url {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
 }
 .created_at {
   float: right;
-  margin-top: 20px;
 }
