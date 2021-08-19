@@ -7,20 +7,62 @@
 
 .book-card {
   border: 1px solid black;
-
-  margin: 10px;
+  margin: 10px 5% 10px 5%;
   text-align: center;
   padding: 10px;
+  display: flex;
   flex-wrap: wrap;
-  height: 400px;
-  width: 300px;
+
+  width: 90%;
   background-color: whitesmoke;
 }
 
 .book-field {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
   flex-wrap: wrap;
   align-items: top;
   background-color: lightgrey;
+}
+.book-title {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 20px;
+}
+
+p {
+  width: 80%;
+}
+h1 {
+  background-color: rgb(4, 4, 4);
+  color: whitesmoke;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.author {
+  display: flex;
+  float: left;
+
+  margin: 20px;
+}
+.category {
+  float: left;
+}
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.url {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.created_at {
+  float: right;
+  margin-top: 20px;
 }

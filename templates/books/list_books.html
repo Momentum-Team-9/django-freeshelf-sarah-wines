@@ -1,24 +1,37 @@
 {% extends "base.html" %} {% block content %}
-<h1>Books</h1>
+<h1>Freeshelf</h1>
 <div class="book-field">
   {% for book in books %}
   <div class="book-card">
     <div class="book-title">
       <a href="{% url 'show_book' pk=book.pk%}"> <h2>{{book.title}}</h2> </a>
     </div>
+
     {% for author in book.authors.all %}
-    <p>Author: {{author.name}}</p>
+    <div class="author">
+      <p>By: {{author.name}}</p>
+    </div>
+
     {% endfor %} {% for category in book.categories.all %}
-    <p>
-      Category:
-      <a href="{% url 'show_category' slug=category.slug%}">
-        {{ category.name }}</a
-      >
-    </p>
-    {% endfor %}
-    <p>{{book.description}}</p>
-    <a href="{{book.url}}">{{book.url}}</a>
-    <p>Added: {{book.created_at}}</p>
-    {% endfor %} {% endblock %}
+    <div class="category">
+      <p>
+        Category:
+        <a href="{% url 'show_category' slug=category.slug%}">
+          {{ category.name }}</a
+        >
+      </p>
+
+      {% endfor %}
+    </div>
+    <div class="description">
+      <p>{{book.description}}</p>
+    </div>
+    <div class="url">
+      <a href="{{book.url}}">{{book.url}}</a>
+    </div>
+    <div class="created_at">
+      <p>Added: {{book.created_at}}</p>
+    </div>
   </div>
+  {% endfor %} {% endblock %}
 </div>
